@@ -1,0 +1,29 @@
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
+
+# Site settings
+title: "Evil-Goblin Blog"
+description: >
+   Posting Something
+
+email: jyh6197@gmail.com
+logo: "/assets/images/df_logo.jpg"
+float_logo: true # true, false (default)
+
+# blog cover
+cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+
+name: 'Evil-Goblin'
+author: 'Evil-Goblin'
+author_image: "/assets/images/author.png"
+
+paginate:	5
+
+url: "https://Evil-Goblin.github.io"
+
+# social icons and sharing options
+social:
+  - icon:	github
+    url:	https://github.com/Evil-Goblin
