@@ -72,7 +72,7 @@ theme_mode: dark # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://github.com/Evil-Goblin/Evil-Goblin.github.io/assets/74400861/15a84e99-8b60-4ee6-b0b5-7a78a4166055
 
 # boolean type, the global switch for TOC in posts.
 toc: true
