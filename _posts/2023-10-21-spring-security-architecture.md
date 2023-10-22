@@ -7,6 +7,8 @@ tags: [Spring, SpringSecurity, Architecture]
 math: true
 mermaid: true
 ---
+## SpringSecurity Architecture Doc 정리
+
 ### SpringSecurity 는 크게 Authentication(인증) , Authorization(허가) , Protection Against Exploits(보호) 로 나뉜다.
 
 ### SpringSecurity 의 Servlet에 대한 지원은 Servlet Filter를 기반으로 한다.
