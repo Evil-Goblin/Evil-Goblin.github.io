@@ -22,11 +22,11 @@ mermaid: true
 - `Servlet` 컨테이너는 자체 표준을 이용해 `Filter` 를 등록할 수 있지만 `Spring Bean` 을 통해 정의된 `Filter` 들은 등록되지 않는다.
 - `DelegatingFilterProxy` 는 `Spring Context` 에 등록된 `Filter` `Bean` 을 실행시킨다.
   ![DelegatingFilterProxy01](https://github.com/Evil-Goblin/spring-lecture/assets/74400861/7e1d65ec-117f-4d8e-82ba-4fea21b6a4b8)
-  *Spring Context 가져온다.*
+  _Spring Context 가져온다._
   ![DelegatingFilterProxy02](https://github.com/Evil-Goblin/spring-lecture/assets/74400861/29d8ca39-4556-46d1-9faa-e2b3d071b1a9)
-  *Spring Context 에 등록된 Filter Bean 을 초기화 시킨다.*
+  _Spring Context 에 등록된 Filter Bean 을 초기화 시킨다._
   ![DelegatingFilterProxy03](https://github.com/Evil-Goblin/spring-lecture/assets/74400861/cc2f6a84-4ebb-4608-995d-39982c2ef44f)
-  *초기화된 Filter Bean 을 실행시킨다. ( FilterChainProxy )*
+  _초기화된 Filter Bean 을 실행시킨다. ( FilterChainProxy )_
 
 ### FilterChainProxy
 - `SpringSecurity` 의 `Servlet` 에 대한 지원은 `FilterChainProxy` 를 통해 이루어진다.
@@ -34,7 +34,7 @@ mermaid: true
 - `Bean` 으로 등록되기 때문에 `DelegatingFilterProxy` 를 통해서 실행된다.
   ![FilterChainProxy01](https://github.com/Evil-Goblin/spring-lecture/assets/74400861/7b87d6dc-efab-47bf-8aca-1dabaea90733)
   ![FilterChainProxy02](https://github.com/Evil-Goblin/spring-lecture/assets/74400861/44bd9510-1f67-436d-9f8d-768629116b22)
-  *ApplicationFilterChain 이 실행된 이후 DelegatingFilterProxy → FilterChainProxy 에 의해 SpringSecurity의 Filter 들이 실행된다.*
+  _ApplicationFilterChain 이 실행된 이후 DelegatingFilterProxy → FilterChainProxy 에 의해 SpringSecurity의 Filter 들이 실행된다._
 
 ### SecurityFilterChain
 - `FilterChainProxy` 에 의해 실행되는 `Filter` `Bean` 이다.
