@@ -38,7 +38,7 @@
     Object.entries(giscusAttributes).forEach(([key, value]) =>
       giscusScript.setAttribute(key, value)
     );
-    document.getElementById('tail-wrapper').appendChild(giscusScript);
+    document.getElementById('tail-wrapper').prepend(giscusScript);
 
     addEventListener('message', (event) => {
       if (
