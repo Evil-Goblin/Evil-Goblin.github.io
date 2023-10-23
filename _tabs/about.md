@@ -8,7 +8,7 @@ order: 4
 - User: Evil-Goblin
 - Job: Backend Developer
 
-## Skill:
+## Skill
 - C
 - Java
 - Javascript
