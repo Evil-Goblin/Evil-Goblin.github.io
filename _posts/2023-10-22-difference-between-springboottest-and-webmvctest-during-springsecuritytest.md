@@ -68,8 +68,8 @@ mermaid: true
 ## 결론
 - `WebMvcTest` 는 `@EnableWebSecurity` 가 로드되지 않기 때문에 `DefaultWebSecurity` 가 로드되어 기동된다.
 
-### 추가 정보
-#### LoginPage로 redirect 또는 401 status 를 반환하는 과정
+## 추가 정보
+### LoginPage로 redirect 또는 401 status 를 반환하는 과정
 - `ExceptionTranslationFilter` 에서 `AuthenticationException` 에러가 발생했을 때 등록된 `AuthenticationEntryPoint` 를 수행한다.
   - `SecurityFilterChain` 의 설정마다 `configurer` 가 축적된다.
   - `httpBasic` 설정은 `HttpBasicConfigurer` 를 추가한다.
