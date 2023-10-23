@@ -41,7 +41,7 @@ mermaid: true
     - `@Controller` , `@ControllerAdvice` , `@JsonComponent` , `Filter` , `WebMvcConfigurer` , `HandlerMethodArgumentResolver` 등
 
 ## SpringSecurityTest 시 발생하는 차이점
-- `WebMvcTest` 의 경우 `loginPage` 설정이 로드되지 않는다.
+- `WebMvcTest` 의 경우 `loginPage` 설정이 적용되지 않는다.
 - 때문에 권한이 없는 페이지에 접근시 `redirect` 처리가 되지 않는다.
 ### WebMvcTest
 ![SpringSecurityTest01](https://github.com/Evil-Goblin/springio-guide/assets/74400861/33cb942d-2705-4343-9451-a49cb641c1b8){: .normal }
@@ -55,6 +55,7 @@ mermaid: true
 - 위에 기술한 대로 `SpringBootTest` 시에는 전체 컨텍스트가 로드된다.
   - 등록한 모든 `Bean` 들이 등록된다.
   - `WebMvcTest` 는 제한적인 `Bean` 만이 등록된다.
+
 ### 권한이 없는 페이지에 대해서 `401` `status code` 를 반환하는 설정은 `httpBasic` 설정이다.
 - 하지만 테스트에 사용한 설정에는 `httpBasic` 설정이 없다.
 - 다시말해 `SpringBootTest` 는 직접 등록한 `SecurityFilterChain` `Bean` 을 이용하여 `SpringSecurity` 가 설정된다.
@@ -65,7 +66,7 @@ mermaid: true
   _`WebMvcTest` 의 콜스택_
 
 ## 결론
-- `WebMvcTest` 는 사용자 정의 `SecurityFilterChain` 을 `Bean` 으로 등록하지 않기 때문에 `Default` 설정의 `Bean` 으로 기동된다.
+- `WebMvcTest` 는 `@EnableWebSecurity` 가 로드되지 않기 때문에 `DefaultWebSecurity` 가 로드되어 기동된다.
 
 ### 추가 정보
 #### LoginPage로 redirect 또는 401 status 를 반환하는 과정
