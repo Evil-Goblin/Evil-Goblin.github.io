@@ -4,8 +4,6 @@ author: Evil-Goblin
 date: 2023-10-23 02:25:00 +0900
 categories: [Spring, SpringSecurity]
 tags: [Spring, SpringSecurity, Test, SpringBootTest, WebMvcTest]
-math: true
-mermaid: true
 ---
 # SpringSecurityTest에서 SpringBootTest를 사용하는 경우와 WebMvcTest를 사용하는 경우의 차이점
 
@@ -43,6 +41,7 @@ mermaid: true
 ## SpringSecurityTest 시 발생하는 차이점
 - `WebMvcTest` 의 경우 `loginPage` 설정이 적용되지 않는다.
 - 때문에 권한이 없는 페이지에 접근시 `redirect` 처리가 되지 않는다.
+
 ### WebMvcTest
 ![SpringSecurityTest01](https://github.com/Evil-Goblin/springio-guide/assets/74400861/33cb942d-2705-4343-9451-a49cb641c1b8){: .normal }
 ![SpringSecurityTest02](https://github.com/Evil-Goblin/springio-guide/assets/74400861/a44e8400-8b75-4072-8c68-99baf6e36c7d){: .normal }

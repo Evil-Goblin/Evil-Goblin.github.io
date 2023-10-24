@@ -4,8 +4,6 @@ author: Evil-Goblin
 date: 2023-10-21 23:22:00 +0900
 categories: [Spring, SpringSecurity]
 tags: [Spring, SpringSecurity, Architecture]
-math: true
-mermaid: true
 ---
 ## SpringSecurity Architecture Doc 정리
 

@@ -4,8 +4,6 @@ author: Evil-Goblin
 date: 2023-10-22 00:32:00 +0900
 categories: [Spring, SpringWebMVC]
 tags: [Spring, SpringWebMVC, SpringBoot3, Controller, RequestMapping]
-math: true
-mermaid: true
 ---
 ## Controller Handler 등록
 기존 `Spring` 의 경우 `@Controller` 또는 `@RequestMapping` 어노테이션이 등록되어 있어야 컨트롤러로 등록되었다.
