@@ -156,3 +156,6 @@ SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       return registration;
   }
   ```
+
+## 원글
+- [SpringSecurityArchitecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
