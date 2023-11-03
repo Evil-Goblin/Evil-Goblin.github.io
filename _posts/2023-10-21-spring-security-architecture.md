@@ -156,6 +156,22 @@ SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       return registration;
   }
   ```
+  
+### Handling Security Exceptions
+- `ExceptionTranslationFilter` 는 `AccessDeniedException` 과 `AuthenticationException` 을 `HTTP response` 로 변환해준다.
+  ![ExceptionTranslationFilter01](https://github.com/Evil-Goblin/ExampleProject/assets/74400861/f4928e3b-ddf2-4c03-b635-1296edd6c519)
+  ![ExceptionTranslationFilter02](https://github.com/Evil-Goblin/ExampleProject/assets/74400861/aa6b0ed9-29d6-4752-bd15-b5f5e18af53d)
+  - 변환되는 `HTTP response` 는 등록된 `AuthenticationEntryPoint` 마다 다르다.(대표적으로 `LoginUrlAuthenticationEntryPoint` : 로그인 페이지로 `redirect`, `HttpStatusEntryPoint` : `Http Status` 를 특정 값으로 변경하는 구체 클래스들이 있다.) 
+- `ExceptionTranslationFilter` 는 `Security Filters` 로서 `FilterChainProxy` 에 등록된다.
+
+![ExceptionTranslationFilter03](https://docs.spring.io/spring-security/reference/_images/servlet/architecture/exceptiontranslationfilter.png)
+1. `ExceptionTranslationFilter` 가 `FilterChain.doFilter(request, response)` 를 실행시킨다.(실행된 `doFilter` 에서 발생하는 예외를 핸들링한다.)
+2. 만약 `AuthenticationException` 이 발생한 경우
+   ![ExceptionTranslationFilter04](https://github.com/Evil-Goblin/ExampleProject/assets/74400861/9f3027b3-f03b-4121-b1ce-cd56bd0bc1d4)
+   - `SecurityContextHoler` 를 비운다.
+   - `HttpServletRequest` 를 캐싱해둔다.(추후 성공했을 때를 대비한다.)
+   - `AuthenticationEntryPoint` 를 통해 클라이언트에 자격 증명을 요청한다.(`redirect`, `401 Status`)
+3. `AccessDeniedException` 이 발생한 경우 `AccessDeniedHandler` 가 호출된다.
 
 ## 원글
 - [SpringSecurityArchitecture](https://docs.spring.io/spring-security/reference/servlet/architecture.html)
