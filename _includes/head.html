@@ -86,6 +86,9 @@
   {% endif %}
 
   <!-- JavaScript -->
+  {% if page.mermaid %}
+    {% include mermaid.html %}
+  {% endif %}
 
   {% unless site.theme_mode %}
     {% include mode-toggle.html %}
